@@ -4,6 +4,7 @@ import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 import Main from './Main';
 import Signin from './Signin';
 import GameMenu from './GameMenu';
+import Running from './Running';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           </Route>
           <Route path="/game-menu">
             <GameMenu />
+          </Route>
+          <Route path="/running">
+            <Running />
           </Route>
           <Route path="/">
             <Main />

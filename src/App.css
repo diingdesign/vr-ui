@@ -62,3 +62,15 @@ h1 {
   padding: 1.5rem;
   border-radius: 12px;
 }
+
+.dismissable-alert {
+  transition: opacity 1s;
+}
+
+.dismissable-alert.dismiss {
+  opacity: 0;
+}
+
+.dismissable-alert.show {
+  opacity: 1;
+}

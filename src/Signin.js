@@ -27,12 +27,12 @@ function Login() {
         <h1>Welcome Back</h1>
         <div className="form-group">
           <label htmlFor="email">Email address</label>
-          <input ref={emailFieldRef} type="email" id="email" className="form-control" aria-describedby="emailHelp" onChange={handleEmailFieldChange}/>
+          <input ref={emailFieldRef} type="email" id="email" className="form-control" placeholder="elite@email.com" aria-describedby="emailHelp" onChange={handleEmailFieldChange}/>
           <small id="emailHelp" className="form-text tex-muted">We'll never share your email with anyone else</small>
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input ref={passwordFieldRef} type="password" id="password" className="form-control" aria-describedby="passwordHelp" onChange={handlePasswordFieldChange}/>
+          <input ref={passwordFieldRef} type="password" id="password" className="form-control" placeholder="Choose a good password" aria-describedby="passwordHelp" onChange={handlePasswordFieldChange}/>
         </div>
         <div className="form-group form-check">
           <input type="checkbox" className="form-check-input" id="check"/>
