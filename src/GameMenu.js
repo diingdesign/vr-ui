@@ -21,7 +21,7 @@ function GameMenu() {
         <div className="container h-100 d-flex justify-content-center align-items-start outbox">
             <form className="panel d-flex flex-column">
             <h1>Configue Game</h1>
-            <div className="form-group">
+            <div className="form-group pb-1">
                 <label htmlFor="practice"><i class="fas fa-tooth"></i> Practice</label>
                 <select name="practice" id="practice" className="form-control">
                     <option selected>Dental Cleaning</option>
@@ -30,12 +30,18 @@ function GameMenu() {
                     <option>Tooth Extraction</option>
                 </select>
             </div>
-            <div className="form-group">
+            <div className="form-group pb-1">
                 <label htmlFor="gameType"><i class="fas fa-gamepad"></i> Mode</label>
-                <select name="gameType" id="gameType" className="form-control">
-                    <option selected>Practice</option>
-                    <option>Free Mode</option>
-                </select>
+                <div className="row px-3">
+                    <div className="form-check col-5">
+                        <input type="radio" className="form-check-input" name="gameType" id="gameType1" value="gameType1" checked/>
+                        <label htmlFor="gameType1" className="form-check-label"><i class="fas fa-stopwatch"></i> Tick-Tack</label>
+                    </div>
+                    <div className="form-check col-5">
+                        <input type="radio" className="form-check-input" name="gameType" id="gameType2" value="gameType2"/>
+                        <label htmlFor="gameType2" className="form-check-label"><i class="fas fa-school"></i> Free Mode</label>
+                    </div>
+                </div>
             </div>
             <div className="form-group">
                 <label htmlFor="gameType"><i class="fas fa-hat-wizard"></i> Level</label>
