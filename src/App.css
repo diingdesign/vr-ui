@@ -63,8 +63,21 @@ h1 {
   border-radius: 12px;
 }
 
+.panel-lg {
+  width: 600px;
+}
+
+.panel-tabs {
+  overflow: hidden;
+}
+
+.tabs-container {
+  overflow: hidden;
+}
+
 .dismissable-alert {
   transition: opacity 1s;
+  width: calc(100% - 6rem);
 }
 
 .dismissable-alert.dismiss {
@@ -73,4 +86,28 @@ h1 {
 
 .dismissable-alert.show {
   opacity: 1;
+}
+
+.tab-left {
+  width: 30%;
+}
+
+.tab-right {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.custom-item {
+  background: transparent;
+  color: white;
+}
+
+.list-group h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+}
+
+.list-group p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.64);
 }
