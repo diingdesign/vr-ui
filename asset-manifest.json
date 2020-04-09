@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/vr-ui/static/css/main.ef425fd7.chunk.css",
-    "main.js": "/vr-ui/static/js/main.05e71d17.chunk.js",
-    "main.js.map": "/vr-ui/static/js/main.05e71d17.chunk.js.map",
+    "main.css": "/vr-ui/static/css/main.f28d71d6.chunk.css",
+    "main.js": "/vr-ui/static/js/main.062e9e48.chunk.js",
+    "main.js.map": "/vr-ui/static/js/main.062e9e48.chunk.js.map",
     "runtime-main.js": "/vr-ui/static/js/runtime-main.66ec155f.js",
     "runtime-main.js.map": "/vr-ui/static/js/runtime-main.66ec155f.js.map",
-    "static/js/2.f7e9e409.chunk.js": "/vr-ui/static/js/2.f7e9e409.chunk.js",
-    "static/js/2.f7e9e409.chunk.js.map": "/vr-ui/static/js/2.f7e9e409.chunk.js.map",
+    "static/js/2.ff0aac4d.chunk.js": "/vr-ui/static/js/2.ff0aac4d.chunk.js",
+    "static/js/2.ff0aac4d.chunk.js.map": "/vr-ui/static/js/2.ff0aac4d.chunk.js.map",
     "index.html": "/vr-ui/index.html",
-    "precache-manifest.94543e5c04697daa56ec0740e06fba2b.js": "/vr-ui/precache-manifest.94543e5c04697daa56ec0740e06fba2b.js",
+    "precache-manifest.bd12d9faf2bcd1efaf7b1d440d37f43e.js": "/vr-ui/precache-manifest.bd12d9faf2bcd1efaf7b1d440d37f43e.js",
     "service-worker.js": "/vr-ui/service-worker.js",
-    "static/css/main.ef425fd7.chunk.css.map": "/vr-ui/static/css/main.ef425fd7.chunk.css.map",
-    "static/js/2.f7e9e409.chunk.js.LICENSE.txt": "/vr-ui/static/js/2.f7e9e409.chunk.js.LICENSE.txt",
+    "static/css/main.f28d71d6.chunk.css.map": "/vr-ui/static/css/main.f28d71d6.chunk.css.map",
+    "static/js/2.ff0aac4d.chunk.js.LICENSE.txt": "/vr-ui/static/js/2.ff0aac4d.chunk.js.LICENSE.txt",
     "static/media/App.css": "/vr-ui/static/media/bg.a9955613.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.66ec155f.js",
-    "static/js/2.f7e9e409.chunk.js",
-    "static/css/main.ef425fd7.chunk.css",
-    "static/js/main.05e71d17.chunk.js"
+    "static/js/2.ff0aac4d.chunk.js",
+    "static/css/main.f28d71d6.chunk.css",
+    "static/js/main.062e9e48.chunk.js"
   ]
 }
