@@ -1,94 +1,67 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
-import SwitchButton from 'react-input-switch';
+import instrumentImage from './assets/images/handinstrument.png';
 
-function Tabs(props) {
+function Instrument(props) {
+    const [active, setActive] = useState(false);
+    const handleClick = (evt) => {
+        setActive(!active);
+    };
     return (
-        <div className="list-group list-group-flush">
-            <button name="0" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 0) ? " active" : ""}`}>Levels</button>
-            <button name="1" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 1) ? " active" : ""}`}>Game Settings</button>
-            <button name="2" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 2) ? " active" : ""}`}>System</button>
-        </div>
-    );
-}
-
-function Levels() {
-    return (
-        <div className="list-group list-group-flush">
-            <button type="button" className="list-group-item list-group-item-action custom-item active">Step 1: #1</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 2: #2</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 3: #3</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 4: #4</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 5: #5</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 6: #6</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 7: #7</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 8: #8</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 9: #9</button>
-            <button type="button" className="list-group-item list-group-item-action custom-item">Step 10: #10</button>
-        </div>
-    );
-}
-
-function Settings() {
-    return (
-        <div className="list-group list-group-flush">
-            <div className="list-group-item custom-item d-flex align-items-center">
-                <div className="title-box d-flex flex-column flex-grow-1">
-                    <h3>Show Alice</h3>
-                    <p>Show or hide the patient</p>
+        <>
+            <div className={`card instrument-card${active ? " active" : ""}`} onClick={handleClick}>
+                <img className="card-img-top" src={instrumentImage} alt="Instrument" />
+                <div className="card-body py-2">
+                    <h5 className="card-title">Instrument</h5>
                 </div>
-                <SwitchButton />
+                <span class="badge"><i class="fas fa-lg fa-check-circle"></i></span>
             </div>
-        </div>
+        </>
     );
 }
 
-function System() {
+function MultipleSelect(props) {
+    const instruments = []
+    for (var i=0;i < 14;i++) {
+        instruments.push(<Instrument />)
+    }
     return (
-        <div className="list-group list-group-flush">
-            <Link to="/" className="list-group-item list-group-item-action custom-item">Restart</Link>
+        <div className="card-columns">
+            {instruments}
         </div>
-    )
+    );
 }
 
 function Running() {
     const alertRef = useRef();
     const [shallDismiss, setShallDismiss] = useState(false);
-    const [selectedTabId, setSelectedTabId] = useState(0);
-    const pages = [
-        <Levels />,
-        <Settings />,
-        <System />
-    ]
     useEffect(() => {
         setTimeout(function() {
             setShallDismiss(true);
         }, 2000);
     });
-
-    const handleTabClick = (evt) => {
-        console.log(evt.target.name);
-        setSelectedTabId(parseInt(evt.target.name));
-    }
     return (
         <div className="container p-5 position-relative d-flex justify-content-center">
-            <div className={`alert alert-success position-absolute dismissable-alert ${shallDismiss ? " dismiss" : ""}`} role="alert" ref={alertRef}>
-                The <strong>GAME</strong> is running! Press MENU key in controller to restart.
+            <div className="row game-step-box">
+                <div className="col-4">
+                    <div className="game-panel left">
+                        <h1>Step 1: Prepare</h1>
+                        <h3>Teeth Cleaning</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat leo quis metus faucibus, ut convallis ante pretium.</p>
+                    </div>
+                </div>
+                <div className="col-8">
+                    <div className="game-panel right">
+                        <MultipleSelect />
+                    </div>
+                </div>
+            </div>
+            <div className={`alert alert-success mt-4 position-absolute dismissable-alert ${shallDismiss ? " dismiss" : ""}`} role="alert" ref={alertRef}>
+                The <strong>GAME</strong> is running! Press MENU key in controller to show or hide the menu.
                 <button className="close" type="button" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div className="panel panel-lg panel-tabs d-flex flex-column">
-                <h1>Settings</h1>
-                <div className="d-flex flex-row flex-grow-1 tabs-container">
-                    <div className="tab-left"><Tabs onTabClick={handleTabClick} selectedTabId={selectedTabId} /></div>
-                    <div className="tab-right flex-grow-1 ml-2 pb-4">
-                        {
-                            pages[selectedTabId]
-                        }
-                    </div>
-                </div>
             </div>
         </div>
     );
