@@ -4,27 +4,25 @@ import { Link, useParams } from 'react-router-dom';
 import instrumentImage from './assets/images/handinstrument.png';
 
 function Instrument(props) {
-    const [active, setActive] = useState(false);
-    const handleClick = (evt) => {
+    /*const handleClick = (evt) => {
         setActive(!active);
-    };
+    };*/
     return (
-        <>
-            <div className={`card instrument-card${active ? " active" : ""}`} onClick={handleClick}>
-                <img className="card-img-top" src={instrumentImage} alt="Instrument" />
-                <div className="card-body py-2">
-                    <h5 className="card-title">Instrument</h5>
-                </div>
-                <span class="badge"><i class="fas fa-lg fa-check-circle"></i></span>
+        <div name={props.name} className={`card instrument-card${props.active ? " active" : ""}`} onClick={props.handleClick}>
+            <img name={props.name} className="card-img-top" src={instrumentImage} alt="Instrument" />
+            <div name={props.name} className="card-body py-2">
+                <h5 name={props.name} className="card-title">Instrument</h5>
             </div>
-        </>
+            <span name={props.name} class="badge"><i class="fas fa-lg fa-check-circle"></i></span>
+        </div>
     );
 }
 
 function MultipleSelect(props) {
-    const instruments = []
+    const instruments = [];
+    console.log(props.selectedOptions);
     for (var i=0;i < 14;i++) {
-        instruments.push(<Instrument />)
+        instruments.push(<Instrument name={i} active={props.selectedOptions.includes(i)} handleClick={props.handleOptionClick} />);
     }
     return (
         <div className="card-columns">
@@ -35,6 +33,7 @@ function MultipleSelect(props) {
 
 function Running(props) {
     const { stepId } = useParams();
+    const [selectedOptions, setSelectedOptions] = useState([]);
     const alertRef = useRef();
     const [shallDismiss, setShallDismiss] = useState(false);
     useEffect(() => {
@@ -42,6 +41,27 @@ function Running(props) {
             setShallDismiss(true);
         }, 2000);
     });
+
+    const handleOptionClick = (evt) => {
+        const selectId = parseInt(evt.target.name);
+        const index = selectedOptions.indexOf(selectId);
+        //console.log(selectedOptions);
+        if (index > -1) {
+            // deselect
+            var o = [].concat(selectedOptions);
+            o.splice(index, 1);
+            setSelectedOptions(o);
+        } else {
+            // select
+            setSelectedOptions(selectedOptions.concat([parseInt(evt.target.name)]));
+        }
+        //console.log(`target name: ${evt.target.name}, matches: ${index}`);
+    };
+
+    const handleDoneClick = (evt) => {
+        // reset values
+        setSelectedOptions([]);
+    };
 
     return (
         <div className="container p-5 position-relative d-flex justify-content-center">
@@ -59,10 +79,10 @@ function Running(props) {
                 <div className="col-8">
                     <div className="game-panel right d-flex flex-column">
                         <div className="selection flex-grow-1">
-                            <MultipleSelect />
+                            <MultipleSelect handleOptionClick={handleOptionClick} selectedOptions={selectedOptions} />
                         </div>
                         <div className="buttons pt-3 d-flex flex-column align-items-end">
-                            <Link className="btn btn-primary" role="button" to={`/running/${parseInt(stepId) + 1}`} >Done</Link>
+                            <Link onClick={handleDoneClick} className={`btn btn-primary${selectedOptions.length > 0 ? "" : " disabled"}`} role="button" to={`/running/${parseInt(stepId) + 1}`} >Done</Link>
                         </div>
                     </div>
                 </div>
