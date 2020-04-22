@@ -111,6 +111,10 @@ h1 {
   color: white;
 }
 
+.custom-item.border-top {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
 .list-group h3 {
   font-size: 1.5rem;
   margin-bottom: 2px;
@@ -150,4 +154,17 @@ h1 {
 
 .instrument-card .badge>i {
   font-size: 20px;
+}
+
+.selection {
+  overflow-y: auto;
+}
+
+.buttons {
+  height: 100px;
+}
+
+.btn-panel {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
 }

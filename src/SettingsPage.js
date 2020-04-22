@@ -9,6 +9,7 @@ function Tabs(props) {
             <button name="0" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 0) ? " active" : ""}`}>Levels</button>
             <button name="1" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 1) ? " active" : ""}`}>Game Settings</button>
             <button name="2" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 2) ? " active" : ""}`}>System</button>
+            <Link to="/running/1" className="list-group-item list-group-item-action custom-item border-top">Resume</Link>
         </div>
     );
 }
@@ -52,20 +53,13 @@ function System() {
     )
 }
 
-function Running() {
-    const alertRef = useRef();
-    const [shallDismiss, setShallDismiss] = useState(false);
+function SettingsPage() {
     const [selectedTabId, setSelectedTabId] = useState(0);
     const pages = [
         <Levels />,
         <Settings />,
         <System />
     ]
-    useEffect(() => {
-        setTimeout(function() {
-            setShallDismiss(true);
-        }, 2000);
-    });
 
     const handleTabClick = (evt) => {
         console.log(evt.target.name);
@@ -88,4 +82,4 @@ function Running() {
     );
 }
 
-export default Running;
+export default SettingsPage;

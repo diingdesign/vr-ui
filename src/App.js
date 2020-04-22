@@ -5,6 +5,7 @@ import Main from './Main';
 import Signin from './Signin';
 import GameMenu from './GameMenu';
 import Running from './Running';
+import SettingsPage from './SettingsPage';
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
           <Route path="/game-menu">
             <GameMenu />
           </Route>
-          <Route path="/running">
+          <Route path="/running/:stepId">
             <Running />
+          </Route>
+          <Route path="/settings">
+            <SettingsPage />
           </Route>
           <Route path="/">
             <Main />

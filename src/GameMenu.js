@@ -61,7 +61,7 @@ function GameMenu() {
                     infoMenuExpand &&
                         infoMenu
                 }
-                <Link to="/running" role="button" className={`btn btn-primary btn-lg btn-round align-self-start`} data-tip="Start your game!" data-place="top" title="Start your game!">Start Game</Link>
+                <Link to="/running/1" role="button" className={`btn btn-primary btn-lg btn-round align-self-start`} data-tip="Start your game!" data-place="top" title="Start your game!">Start Game</Link>
             </form>
             <ReactTooltip />
         </div>

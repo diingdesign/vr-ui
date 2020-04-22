@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import instrumentImage from './assets/images/handinstrument.png';
 
 function Instrument(props) {
@@ -33,7 +33,8 @@ function MultipleSelect(props) {
     );
 }
 
-function Running() {
+function Running(props) {
+    const { stepId } = useParams();
     const alertRef = useRef();
     const [shallDismiss, setShallDismiss] = useState(false);
     useEffect(() => {
@@ -41,19 +42,28 @@ function Running() {
             setShallDismiss(true);
         }, 2000);
     });
+
     return (
         <div className="container p-5 position-relative d-flex justify-content-center">
             <div className="row game-step-box">
-                <div className="col-4">
+                <div className="col-4 d-flex flex-column align-items-end">
                     <div className="game-panel left">
-                        <h1>Step 1: Prepare</h1>
+                        <h1>{`Step ${stepId}`}</h1>
                         <h3>Teeth Cleaning</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat leo quis metus faucibus, ut convallis ante pretium.</p>
                     </div>
+                    <Link to="/settings" className="btn btn-secondary py-2 my-3 btn-panel" role="button">
+                        <i class="fas fa-cog"></i>
+                    </Link>
                 </div>
                 <div className="col-8">
-                    <div className="game-panel right">
-                        <MultipleSelect />
+                    <div className="game-panel right d-flex flex-column">
+                        <div className="selection flex-grow-1">
+                            <MultipleSelect />
+                        </div>
+                        <div className="buttons pt-3 d-flex flex-column align-items-end">
+                            <Link className="btn btn-primary" role="button" to={`/running/${parseInt(stepId) + 1}`} >Done</Link>
+                        </div>
                     </div>
                 </div>
             </div>
