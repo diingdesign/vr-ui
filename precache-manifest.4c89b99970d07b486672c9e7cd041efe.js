@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e4ab430b150e7f680736e6594ef3bf03",
+    "revision": "4e674dbb592b47df14b74c981f8c9302",
     "url": "/vr-ui/index.html"
   },
   {
-    "revision": "af502702fb4b1ef2c204",
+    "revision": "0ab6c9e5e27c206ae937",
     "url": "/vr-ui/static/css/main.f28d71d6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vr-ui/static/js/2.ff0aac4d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "af502702fb4b1ef2c204",
-    "url": "/vr-ui/static/js/main.062e9e48.chunk.js"
+    "revision": "0ab6c9e5e27c206ae937",
+    "url": "/vr-ui/static/js/main.24ea7528.chunk.js"
   },
   {
     "revision": "f5bf2228ed10477416bf",

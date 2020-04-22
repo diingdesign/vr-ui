@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/vr-ui/static/css/main.f28d71d6.chunk.css",
-    "main.js": "/vr-ui/static/js/main.062e9e48.chunk.js",
-    "main.js.map": "/vr-ui/static/js/main.062e9e48.chunk.js.map",
+    "main.js": "/vr-ui/static/js/main.24ea7528.chunk.js",
+    "main.js.map": "/vr-ui/static/js/main.24ea7528.chunk.js.map",
     "runtime-main.js": "/vr-ui/static/js/runtime-main.66ec155f.js",
     "runtime-main.js.map": "/vr-ui/static/js/runtime-main.66ec155f.js.map",
     "static/js/2.ff0aac4d.chunk.js": "/vr-ui/static/js/2.ff0aac4d.chunk.js",
     "static/js/2.ff0aac4d.chunk.js.map": "/vr-ui/static/js/2.ff0aac4d.chunk.js.map",
     "index.html": "/vr-ui/index.html",
-    "precache-manifest.bd12d9faf2bcd1efaf7b1d440d37f43e.js": "/vr-ui/precache-manifest.bd12d9faf2bcd1efaf7b1d440d37f43e.js",
+    "precache-manifest.4c89b99970d07b486672c9e7cd041efe.js": "/vr-ui/precache-manifest.4c89b99970d07b486672c9e7cd041efe.js",
     "service-worker.js": "/vr-ui/service-worker.js",
     "static/css/main.f28d71d6.chunk.css.map": "/vr-ui/static/css/main.f28d71d6.chunk.css.map",
     "static/js/2.ff0aac4d.chunk.js.LICENSE.txt": "/vr-ui/static/js/2.ff0aac4d.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.66ec155f.js",
     "static/js/2.ff0aac4d.chunk.js",
     "static/css/main.f28d71d6.chunk.css",
-    "static/js/main.062e9e48.chunk.js"
+    "static/js/main.24ea7528.chunk.js"
   ]
 }
