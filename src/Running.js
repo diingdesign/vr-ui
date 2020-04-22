@@ -6,9 +6,9 @@ import SwitchButton from 'react-input-switch';
 function Tabs(props) {
     return (
         <div className="list-group list-group-flush">
-            <button name="0" type="button" onClick={props.onTabClick} className="list-group-item list-group-item-action custom-item active">Levels</button>
-            <button name="1" type="button" onClick={props.onTabClick} className="list-group-item list-group-item-action custom-item">Game Settings</button>
-            <button name="2" type="button" onClick={props.onTabClick} className="list-group-item list-group-item-action custom-item">System</button>
+            <button name="0" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 0) ? " active" : ""}`}>Levels</button>
+            <button name="1" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 1) ? " active" : ""}`}>Game Settings</button>
+            <button name="2" type="button" onClick={props.onTabClick} className={`list-group-item list-group-item-action custom-item${(props.selectedTabId === 2) ? " active" : ""}`}>System</button>
         </div>
     );
 }
@@ -82,7 +82,7 @@ function Running() {
             <div className="panel panel-lg panel-tabs d-flex flex-column">
                 <h1>Settings</h1>
                 <div className="d-flex flex-row flex-grow-1 tabs-container">
-                    <div className="tab-left"><Tabs onTabClick={handleTabClick} /></div>
+                    <div className="tab-left"><Tabs onTabClick={handleTabClick} selectedTabId={selectedTabId} /></div>
                     <div className="tab-right flex-grow-1 ml-2 pb-4">
                         {
                             pages[selectedTabId]
